@@ -21,6 +21,8 @@
     "cypress:run": "start-server-and-test 'npm run start:test' 3000 'env-cmd -f .env.test cypress run'"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.3",
+    "flag-icons": "^6.6.6",
     "next": "^12.3.1",
     "next-i18next": "^12.1.0",
     "react": "18.2.0",
