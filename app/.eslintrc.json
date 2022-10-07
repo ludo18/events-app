@@ -1,0 +1,53 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "env": { "browser": true, "node": true, "es2021": true, "jest": true },
+  "parser": "@babel/eslint-parser", //avoid complaints about class structure
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
+  "plugins": [
+    "testing-library",
+    "jest-dom",
+    "react",
+    "simple-import-sort",
+    "prettier",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "semi": [2, "always"], //semi-colons mandatory
+    "react/prop-types": 1,
+    "react/no-unescaped-entities": 0,
+    //below:  dont raise error if you use <img> instead of next/image
+    "@next/next/no-img-element": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    // Only use Testing Library lint rules in jest test files
+    {
+      "files": ["__tests__/**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    },
+    // use Cypress lint rules in Cypress test files
+    {
+      "files": ["cypress/e2e/**/*.cy.js", "cypress/support/*"],
+      "extends": ["plugin:cypress/recommended"],
+      "env": { "cypress/globals": true }
+    }
+  ]
+}

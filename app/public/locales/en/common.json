@@ -1,0 +1,43 @@
+{
+  "home": {
+    "PowerPhrase": "When is that",
+    "SubPowerPhrase": "All events in one place",
+    "PowerText": "Don't miss an event again. Subscribe today."
+  },
+  "maintenance": {
+    "Maintenance_Mode_On": "Maintenance Mode On",
+    "Site_under_maintenance": "The site is currently under maintenance.",
+    "SiteInConstruction": "Site In Construction",
+    "SoonOnline": "Soon Online !",
+    "404": "404",
+    "404_This_page_could_not_be_found": "This page could not be found",
+    "500_An_error_occured": "An error occured",
+    "500": "500"
+  },
+  "login": {
+    "login": "Login"
+  },
+  "terms": {
+    "Terms_of_Service": "Terms of Service",
+    "Terms": "Terms",
+    "Privacy": "Privacy",
+    "Security": "Security",
+    "Copyright": "Copyright",
+    "AllRightsReservedWorldwide": "All Rights Reserved Worldwide"
+  },
+  "About": "About",
+  "loading": "Loading...",
+  "Create": "Create",
+  "Update": "Update",
+  "edit": "Edit",
+  "Delete": "Delete",
+  "Back": "Back",
+  "Next": "Next",
+  "Unauthorized_Page": "Unauthorized Page",
+  "Access_denied": "Access denied",
+  "default_website_name": "My E-commerce Site",
+  "Are_you_sure": "Are you sure?",
+  "YES": "YES",
+  "NO": "NO",
+  "Home": "Home"
+}
