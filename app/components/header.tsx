@@ -33,6 +33,9 @@ export default function Header() {
           <Link href="/login" className="p-2">
             {t('Login')}
           </Link>
+          <Link href="/help" className="p-2">
+            {t('Help')}
+          </Link>
         </div>
       </nav>
     </header>

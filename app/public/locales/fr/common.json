@@ -1,4 +1,9 @@
 {
+  "help": {
+    "help": "Aide",
+    "Need_help": "Besoin d'aide ?",
+    "How_can_we_help": "Comment pouvons-nous vous aider ?"
+  },
   "home": {
     "PowerPhrase": "C'est quand déjà",
     "SubPowerPhrase": "Tous vos évènements à la même place",

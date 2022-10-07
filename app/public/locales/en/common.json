@@ -1,4 +1,9 @@
 {
+  "help": {
+    "help": "Help",
+    "Need_help": "Need help ?",
+    "How_can_we_help": "How can we help ?"
+  },
   "home": {
     "PowerPhrase": "When is that",
     "SubPowerPhrase": "All events in one place",
