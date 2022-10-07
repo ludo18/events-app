@@ -1,9 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Roboto_Condensed-Regular';
+  src: url('/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto_Condensed-Bold';
+  src: url('/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf');
+}
+@font-face {
+  font-family: 'Roboto_Condensed-Italic';
+  src: url('/fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf');
+}
+
 html,
 body {
+  overflow: overlay; /* this avoids the screen "jumps" due to scrollbar hiding/showing*/
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto_Condensed-Regular', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Roboto_Condensed-Bold';
+}
+
+h1 {
+  @apply text-8xl;
+}
+
+h2 {
+  @apply text-3xl;
 }
 
 a {
@@ -13,4 +43,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.bgWrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bgVariant {
+  position: fixed;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
 }

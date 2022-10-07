@@ -8,12 +8,8 @@ export default function Help({ locale }) {
 
   return (
     <Layout title={t('help.Help')} showHeader={true} showFooter={true}>
-      <div className="flex flex-row justify-between items-start">
-        <div>
-          <h1 className="text-3xl">{t('help.Need_help')}</h1>
-          <p>{t('help.How_can_we_help')}</p>
-        </div>
-      </div>
+      <h1 className="text-3xl">{t('help.Need_help')}</h1>
+      <p>{t('help.How_can_we_help')}</p>
     </Layout>
   );
 }

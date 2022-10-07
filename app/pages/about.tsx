@@ -2,13 +2,12 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '@/components/layout';
-import styles from '../styles/Home.module.css';
 
 export default function About(): React.ReactElement {
   const { t } = useTranslation('common');
   return (
     <Layout title={t('About')} showHeader={true} showFooter={true}>
-      <main className={styles.main}>
+      <div>
         <h1>{t('About')}</h1>
         <p>
           Favicon:{' '}
@@ -16,12 +15,12 @@ export default function About(): React.ReactElement {
             Event Icon Vectors by Vecteezy
           </Link>
         </p>
-        <p className={styles.description}>
+        <p>
           <Link href="/">
             <a>&larr; {t('Back')}</a>
           </Link>
         </p>
-      </main>
+      </div>
     </Layout>
   );
 }

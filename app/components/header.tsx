@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav>
+      <nav className="flex h-16 px-4 justify-between items-center">
         {/* Logo */}
         <Link href="/">
           <a>
@@ -37,12 +37,12 @@ export default function Header() {
             />
           </a>
         </Link>
-        <div>
-          <Link href="/" className="p-2">
-            {t('Home')}
+        <div className="flex flex-row justify-end content-center items-center gap-3">
+          <Link href="/">
+            <a>{t('Home')}</a>
           </Link>
-          <Link href="/about" className="p-2">
-            {t('About')}
+          <Link href="/about">
+            <a className="whitespace-nowrap">{t('About')}</a>
           </Link>
           {/* Language Menu */}
           <Menu as="div" className="relative inline-block z-10">
@@ -50,7 +50,7 @@ export default function Header() {
               <span
                 className={`fi fi-${config.flags[
                   router?.locale?.toLowerCase()
-                ]?.toLowerCase()} bg-contain bg-no-repeat bg-left pl-6`}
+                ]?.toLowerCase()} bg-contain bg-no-repeat bg-left pl-6 opacity-70`}
               ></span>
               {router?.locale?.toUpperCase()}
             </Menu.Button>
@@ -74,10 +74,10 @@ export default function Header() {
             </Menu.Items>
           </Menu>
           <Link href="/login" className="p-2">
-            {t('Login')}
+            <a>{t('Login')}</a>
           </Link>
           <Link href="/help" className="p-2">
-            {t('Help')}
+            <a>{t('Help')}</a>
           </Link>
         </div>
       </nav>
