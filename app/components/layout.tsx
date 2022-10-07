@@ -18,7 +18,7 @@ export default function Layout({ title, children, showFooter, showHeader }) {
       </Head>
       <ToastContainer position="bottom-center" limit={1} />
       <Background>
-        <div className="flex min-h-screen flex-col justify-between mx-1">
+        <div className="flex min-h-screen flex-col justify-between ml-1 mr-5">
           {showHeader !== false && <Header />}
           <main className="container m-auto text-center">{children}</main>
           {showFooter !== false && <Footer />}

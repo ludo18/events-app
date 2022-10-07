@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: 'Brixton-Sans-Lt';
+  src: url('/fonts/Brixton_Sans/Brixton-Sans-Lt.ttf');
+}
+@font-face {
+  font-family: 'Brixton-Sans-Outline';
+  src: url('/fonts/Brixton_Sans/Brixton-Sans-Outline.ttf');
+}
+@font-face {
+  font-family: 'Brixton-Sans-Rg';
+  src: url('/fonts/Brixton_Sans/Brixton-Sans-Rg.ttf');
+}
+
+@font-face {
   font-family: 'Roboto_Condensed-Regular';
   src: url('/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
 }
@@ -17,15 +30,15 @@
 
 html,
 body {
-  overflow: overlay; /* this avoids the screen "jumps" due to scrollbar hiding/showing*/
+  overflow-y: overlay; /* this avoids the screen "jumps" due to scrollbar hiding/showing*/
   padding: 0;
   margin: 0;
-  font-family: 'Roboto_Condensed-Regular', sans-serif;
+  font-family: 'Brixton-Sans-Rg', 'Roboto_Condensed-Regular', sans-serif;
 }
 
 h1,
 h2 {
-  font-family: 'Roboto_Condensed-Bold';
+  font-family: 'Brixton-Sans-Outline', 'Roboto_Condensed-Bold', sans-serif;
 }
 
 h1 {

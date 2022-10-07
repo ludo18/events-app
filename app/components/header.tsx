@@ -22,15 +22,15 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="flex h-16 px-4 justify-between items-center">
+      <nav className="flex h-16 justify-between items-center">
         {/* Logo */}
         <Link href="/">
           <a>
             <Image
-              src="/images/LUDO-demo-company-logo.png"
+              src="/images/LUDO-LOGO-light_rgb_148-163-184.webp"
               alt="shopper-logo"
-              width={64 * ratio}
-              height={64}
+              width={48 * ratio}
+              height={48}
               onLoadingComplete={({ naturalWidth, naturalHeight }) => {
                 setRatio(naturalWidth / naturalHeight);
               }}

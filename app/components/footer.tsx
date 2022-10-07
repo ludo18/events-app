@@ -18,7 +18,7 @@ export default function Footer() {
   }, [currentYear]);
 
   return (
-    <footer className="flex flex-col justify-center items-center shadow-inner mt-10">
+    <footer className="flex flex-col justify-center items-center shadow-inner mt-10 mb-2">
       <div>
         <div className="flex flex-row flex-wrap justify-center items-center gap-3 pb-2">
           <Link href="/">
