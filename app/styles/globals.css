@@ -72,3 +72,9 @@ a {
   overflow: hidden;
   z-index: -1;
 }
+
+.mainimg {
+  width: 90vw;
+  position: absolute;
+  opacity: 0.2;
+}
