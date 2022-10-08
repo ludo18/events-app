@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "startAt": "2022-09-27T02:00:00.000Z",
+    "endAt": "2022-09-27T05:00:00.000Z",
+    "name": "DAOs For Humanity",
+    "description": "According to Sharad Agarwal, Chief Metaverse Officer of Cyber Gear, “We will take a deep dive into how DAOs can make an environmental, social and governance (ESG) impact. We will discuss what the ESG movement can learn from blockchain governance. This webinar aims to educate impact investors (whether as an individual or a corporation) about DAOs, what to consider in impact investing or how to contribute to a better tomorrow in Web3.”",
+    "image": "eventA.webp"
+  },
+  {
+    "id": 1,
+    "startAt": "2022-12-02T10:00:00.000Z",
+    "endAt": "2022-12-02T14:00:00.000Z",
+    "name": "Brands Transition From Web2 To Web3",
+    "description": "The major aim of Web3 is to give back the internet power to the users instead of companies. To achieve this, Web 3 makes use of blockchain and cryptocurrency technology to create a form of ownership. More than technology, Web3 is a mindset. In order to succeed in Web3, leaders need to change the Web2 mindset and look at the future with a fresh set of eyes!",
+    "image": "eventB.webp"
+  },
+  {
+    "id": 2,
+    "startAt": "2023-03-13T07:00:00.000Z",
+    "endAt": "2023-03-17T14:00:00.000Z",
+    "name": "Dynamic World Of Web3 (WOW) Summit",
+    "description": "The four-day festival explores the various technologies, opportunities and possibilities associated with the ‘Metaverse’, blockchain, cryptocurrency, Artificial intelligence and finally the rise and evolution of digital art works and NFTS.",
+    "image": "eventC.webp"
+  }
+]
