@@ -1,5 +1,9 @@
 {
-  "events": { "Events": "Events" },
+  "events": {
+    "Events": "Events",
+    "Event_created_successfully": "Event created successfully",
+    "Create_Event": "Create Event"
+  },
   "help": {
     "help": "Help",
     "Need_help": "Need help ?",

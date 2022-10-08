@@ -1,5 +1,9 @@
 {
-  "events": { "Events": "Évènements" },
+  "events": {
+    "Events": "Évènements",
+    "Event_created_successfully": "Évènement créé avec succès",
+    "Create_Event": "Création d'évènement"
+  },
   "help": {
     "help": "Aide",
     "Need_help": "Besoin d'aide ?",
