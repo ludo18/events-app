@@ -41,6 +41,9 @@ export default function Header() {
           <Link href="/">
             <a>{t('Home')}</a>
           </Link>
+          <Link href="/events">
+            <a>{t('events.Events')}</a>
+          </Link>
           <Link href="/about">
             <a className="whitespace-nowrap">{t('About')}</a>
           </Link>

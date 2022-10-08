@@ -12,12 +12,8 @@ export default function Terms() {
       showHeader={true}
       showFooter={true}
     >
-      <div className="flex flex-row justify-between items-start">
-        <div>
-          <h1 className="text-3xl">{t('terms.Terms_of_Service')}</h1>
-          <p>{t('terms.Terms_of_Service')}</p>
-        </div>
-      </div>
+      <h1 className="text-3xl">{t('terms.Terms_of_Service')}</h1>
+      <p>{t('terms.Terms_of_Service')}</p>
     </Layout>
   );
 }
