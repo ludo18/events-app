@@ -12,6 +12,7 @@ export const EventCard: FunctionComponent<Event> = ({
 }) => {
   const [ratio, setRatio] = useState(16 / 9);
   const size = 600;
+
   return (
     <div className="border-4 border-slate-400 rounded-2xl p-2 flex flex-col justify-between gap-10">
       <div>
