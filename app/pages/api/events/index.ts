@@ -17,9 +17,10 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   // in this app, this endpoint will be hit by testing directly to test on-demand ISR revalidation
 
   // Check for secret to confirm this is a valid request
-  if (req.query.secret !== process.env.REVALIDATION_SECRET) {
-    return res.status(401).json({ message: 'Invalid revalidation token' });
-  }
+  // TODO: uncomment only if i have time to implement authentication
+  // if (req.query.secret !== process.env.REVALIDATION_SECRET) {
+  //   return res.status(401).json({ message: 'Invalid revalidation token' });
+  // }
 
   // add event (here is where authorization would be validated)
   const { newEvent } = req.body;
@@ -29,7 +30,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
 
   //console.log('adding new event', newEvent);
   const addedEvent = await addEvent(newEvent);
-
+  console.log(addedEvent);
   // revalidate events page for ISR
   // note: this will change to `res.revalidate` when
   // this feature is out of beta

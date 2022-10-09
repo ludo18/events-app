@@ -9,6 +9,7 @@ import Background from './background';
 
 export default function Layout({ title, children, showFooter, showHeader }) {
   const { t } = useTranslation('common');
+
   return (
     <div>
       <Head>

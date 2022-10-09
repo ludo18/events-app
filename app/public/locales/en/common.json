@@ -2,7 +2,21 @@
   "events": {
     "Events": "Events",
     "Event_created_successfully": "Event created successfully",
-    "Create_Event": "Create Event"
+    "Create_Event": "Create Event",
+    "Event_detail":"Event details"
+    "form": {
+      "Name": "Name",
+      "Please_enter_name": "Please enter name.",
+      "Description": "Description",
+      "Please_enter_description": "Please enter description.",
+      "startAt": "Start date & time",
+      "Please_enter_startAt": "Please enter start date & time.",
+      "endAt": "End date & time",
+      "Please_enter_endAt": "Please enter end date & time.",
+      "image": "Image",
+      "Please_enter_image": "Please enter image.",
+      "End_date_should_be_older_than_start_date": "End date should be older than start date"
+    }
   },
   "help": {
     "help": "Help",

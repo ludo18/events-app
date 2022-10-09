@@ -32,9 +32,11 @@ export const EventCard: FunctionComponent<Event> = ({
         <h2>{name}</h2>
       </div>
       <div>{description}</div>
-      <div>
-        <div>{startAt}</div>
-        <div>{endAt}</div>
+      <div className="flex flex-col gap-1">
+        <div title={startAt}>
+          {new Date(Date.parse(startAt)).toLocaleString()}
+        </div>
+        <div title={endAt}>{new Date(Date.parse(endAt)).toLocaleString()}</div>
       </div>
     </div>
   );

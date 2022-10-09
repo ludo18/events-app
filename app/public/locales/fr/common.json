@@ -2,7 +2,21 @@
   "events": {
     "Events": "Évènements",
     "Event_created_successfully": "Évènement créé avec succès",
-    "Create_Event": "Création d'évènement"
+    "Create_Event": "Création d'évènement",
+    "Event_detail": "Détails de l'évènement",
+    "form": {
+      "Name": "Nom",
+      "Please_enter_name": "Veuillez saisir un nom.",
+      "Description": "Description",
+      "Please_enter_description": "Veuillez saisir une description.",
+      "startAt": "Début",
+      "Please_enter_startAt": "Veuillez saisir date & heure de début.",
+      "endAt": "Fin",
+      "Please_enter_endAt": "Veuillez saisir date & heure de fin.",
+      "image": "Image",
+      "Please_enter_image": "Veuillez choisir une image.",
+      "End_date_should_be_older_than_start_date": "Date & heure de fin devraient etre ultérieures à date et heure de début."
+    }
   },
   "help": {
     "help": "Aide",
