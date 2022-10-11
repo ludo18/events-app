@@ -89,9 +89,6 @@ export default function Header() {
           <Link href="/events">
             <a>{t('events.Events')}</a>
           </Link>
-          <Link href="/about">
-            <a className="whitespace-nowrap">{t('About')}</a>
-          </Link>
           {/* Language Menu */}
           <Menu as="div" className="relative inline-block z-10">
             <Menu.Button className="flex justify-start items-center">
@@ -123,12 +120,17 @@ export default function Header() {
               ))}
             </Menu.Items>
           </Menu>
+          <Link href="/about">
+            <a className="whitespace-nowrap">{t('About')}</a>
+          </Link>
+          {/* 
           <Link href="/login" className="p-2">
             <a>{t('Login')}</a>
           </Link>
           <Link href="/help" className="p-2">
             <a>{t('Help')}</a>
           </Link>
+          */}
         </div>
       </nav>
     </header>
