@@ -55,9 +55,9 @@ export const EventCard: FunctionComponent<CustomEvent> = ({
             </div>
           </div>
         </div>
-        <h2 className="mb-4">{name}</h2>
+        <h2 className="mb-4 break-words">{name}</h2>
       </div>
-      <div>{description}</div>
+      <div className="break-words">{description}</div>
     </div>
   );
 };
