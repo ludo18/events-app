@@ -40,19 +40,10 @@ export default function Header() {
   }, [state.currentOffset]);
 
   const timezoneHandler = (e) => {
-    changeTimezone({ timezone: e.target.value });
-  };
-
-  const changeTimezone = ({ timezone }) => {
-    const offset = timezones[timezone]?.offset;
-    console.log('Moving to offset', offset);
-    dispatch({ type: 'TIMEZONE_UPDATE', payload: { timezone, offset } });
-    console.log(
-      'New time is ',
-      addHoursToCurrentDate(
-        parseInt(offset, 10) - parseInt(state.realOffset, 10)
-      ).toLocaleString()
-    );
+    dispatch({
+      type: 'TIMEZONE_UPDATE',
+      payload: { timezone: e.target.value },
+    });
   };
 
   return (

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useReducer } from 'react';
+import React, { useContext, useReducer } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'next-i18next';
@@ -9,7 +9,12 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from '@/components/layout';
 import { getError } from '@/lib/utils/error';
 import Loading from '@/components/loading';
-import { addDaysToCurrentDate, isOlderThan } from '@/lib/utils/functions';
+import {
+  addDaysToCurrentDate,
+  addHoursToDate,
+  isOlderThan,
+} from '@/lib/utils/functions';
+import { TimezoneContext } from '@/contexts/timezone-context';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -28,6 +33,8 @@ function reducer(state, action) {
 function EventAddScreen() {
   const { t } = useTranslation('common');
   const router = useRouter();
+  const { state, dispatch: dispatchToTimezoneContext } =
+    useContext(TimezoneContext);
   const [{ loading, error, loadingCreate }, dispatch] = useReducer(reducer, {
     loading: false,
     error: '',
@@ -40,6 +47,26 @@ function EventAddScreen() {
     getValues,
   } = useForm();
 
+  function adjustDatetimesToSimulatedTimezone({
+    startAt,
+    endAt,
+  }: {
+    startAt: string;
+    endAt: string;
+  }) {
+    const startAtDate = new Date(Date.parse(startAt));
+    const adjustedStart = addHoursToDate(
+      startAtDate,
+      state.realOffset - state.currentOffset
+    );
+    const endAtDate = new Date(Date.parse(endAt));
+    const adjustedEnd = addHoursToDate(
+      endAtDate,
+      state.realOffset - state.currentOffset
+    );
+    return { adjustedStart, adjustedEnd };
+  }
+
   const submitHandler = async ({
     name,
     description,
@@ -48,9 +75,23 @@ function EventAddScreen() {
     endAt,
   }) => {
     try {
+      console.log(typeof startAt);
+      //adjust dates to simulated timezone
+      //(in the form, they are recorded as being on browser-detected timezone)
+      const { adjustedStart, adjustedEnd } = adjustDatetimesToSimulatedTimezone(
+        { startAt, endAt }
+      );
+
+      //send the request to create event
       dispatch({ type: 'CREATE_REQUEST' });
       const payload = {
-        newEvent: { name, description, image, startAt, endAt },
+        newEvent: {
+          name,
+          description,
+          image,
+          startAt: adjustedStart,
+          endAt: adjustedEnd,
+        },
       };
       const { data } = await axios.post('/api/events', payload, {
         headers: { 'content-type': 'application/json' },
@@ -58,7 +99,8 @@ function EventAddScreen() {
       if (data?.event?.id) {
         dispatch({ type: 'CREATE_SUCCESS' });
         toast.success(t('events.Event_created_successfully'));
-        router.push(`/events/${data.event.id}`);
+        //TODO reactivate
+        //router.push(`/events/${data.event.id}`);
       } else {
         dispatch({ type: 'CREATE_FAIL' });
         toast.error(getError(data?.message || t('UNEXPECTED_ERROR'))); //TODO: REWRITE

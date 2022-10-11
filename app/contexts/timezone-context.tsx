@@ -1,4 +1,5 @@
 import { createContext, useReducer } from 'react';
+import timezones from '@/lib/data/timezones.json';
 
 interface TimezoneState {
   timezone: string;
@@ -21,7 +22,8 @@ export const TimezoneContext = createContext(null);
 function reducer(state, action) {
   switch (action.type) {
     case 'TIMEZONE_UPDATE': {
-      const { timezone, offset } = action.payload;
+      const { timezone } = action.payload;
+      const offset = timezones[timezone]?.offset ?? state.realOffset;
       const newState: TimezoneState = {
         ...state,
         timezone,
