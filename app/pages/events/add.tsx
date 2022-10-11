@@ -57,12 +57,12 @@ function EventAddScreen() {
     const startAtDate = new Date(Date.parse(startAt));
     const adjustedStart = addHoursToDate(
       startAtDate,
-      state.realOffset - state.currentOffset
+      state.timezone.realOffset - state.timezone.currentOffset
     );
     const endAtDate = new Date(Date.parse(endAt));
     const adjustedEnd = addHoursToDate(
       endAtDate,
-      state.realOffset - state.currentOffset
+      state.timezone.realOffset - state.timezone.currentOffset
     );
     return { adjustedStart, adjustedEnd };
   }

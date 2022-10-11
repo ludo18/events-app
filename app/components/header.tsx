@@ -28,7 +28,8 @@ export default function Header() {
   useEffect(() => {
     toast.success(
       `${t('timezone.Simulated_local_time_is_now')}:\n${addHoursToCurrentDate(
-        parseInt(state.currentOffset, 10) - parseInt(state.realOffset, 10)
+        parseInt(state.timezone.currentOffset, 10) -
+          parseInt(state.timezone.realOffset, 10)
       ).toLocaleString([], {
         hour: '2-digit',
         minute: '2-digit',
@@ -37,7 +38,7 @@ export default function Header() {
         toastId: 'success',
       }
     );
-  }, [state.currentOffset]);
+  }, [state?.timezone?.currentOffset]);
 
   const timezoneHandler = (e) => {
     dispatch({
@@ -68,7 +69,7 @@ export default function Header() {
           <div>{t('timezone.Timezone')}</div>
           <select
             className="w-full lg:w-2/3"
-            value={state.timezone}
+            value={state.timezone?.timezone}
             onChange={timezoneHandler}
           >
             <option value="null">{t('timezone.let_browser_detect')}</option>

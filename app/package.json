@@ -24,6 +24,7 @@
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "fast-json-patch": "^3.1.1",
+    "js-cookie": "^3.0.1",
     "next": "^12.3.1",
     "next-auth": "^4.12.3",
     "next-connect": "^0.13.0",

@@ -7,7 +7,8 @@ export default function TimezoneDatetime<Date>({ datetime }) {
 
   const adjustedDatetime = addHoursToDate(
     datetime,
-    parseInt(state.currentOffset, 10) - parseInt(state.realOffset, 10)
+    parseInt(state.timezone.currentOffset, 10) -
+      parseInt(state.timezone.realOffset, 10)
   );
   return (
     <div className="whitespace-nowrap">
