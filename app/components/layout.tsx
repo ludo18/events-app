@@ -1,8 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Header from './header';
 import Footer from './footer';
 import Background from './background';
@@ -17,7 +15,6 @@ export default function Layout({ title, children, showFooter, showHeader }) {
         <meta name="description" content="Web application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ToastContainer position="bottom-center" limit={1} />
       <Background>
         <div className="flex min-h-screen flex-col justify-between ml-1 mr-5">
           {showHeader !== false && <Header />}

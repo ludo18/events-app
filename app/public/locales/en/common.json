@@ -1,9 +1,16 @@
 {
+  "timezone": {
+    "Timezone": "Timezone",
+    "let_browser_detect": "browser detection",
+    "Simulated_local_time_is_now": "Simulated local time is now"
+  },
   "events": {
     "Events": "Events",
     "Event_created_successfully": "Event created successfully",
     "Create_Event": "Create Event",
-    "Event_detail":"Event details"
+    "Event_detail": "Event details",
+    "startsAt": "starts at: ",
+    "endsAt": "ends at: ",
     "form": {
       "Name": "Name",
       "Please_enter_name": "Please enter name.",

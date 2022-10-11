@@ -52,7 +52,6 @@ function EventAddScreen() {
       const payload = {
         newEvent: { name, description, image, startAt, endAt },
       };
-      console.log(payload, typeof payload.newEvent.startAt);
       const { data } = await axios.post('/api/events', payload, {
         headers: { 'content-type': 'application/json' },
       });

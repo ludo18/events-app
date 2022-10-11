@@ -1,9 +1,16 @@
 {
+  "timezone": {
+    "Timezone": "Fuseau",
+    "let_browser_detect": "détection par le navigateur",
+    "Simulated_local_time_is_now": "La nouvelle heure simulée est maintenant"
+  },
   "events": {
     "Events": "Évènements",
     "Event_created_successfully": "Évènement créé avec succès",
     "Create_Event": "Création d'évènement",
     "Event_detail": "Détails de l'évènement",
+    "startsAt": "à partir de: ",
+    "endsAt": "jusque: ",
     "form": {
       "Name": "Nom",
       "Please_enter_name": "Veuillez saisir un nom.",

@@ -16,12 +16,17 @@ export function isOlderThan(date1: string, date2: string): boolean {
   var d2 = Date.parse(date2);
   return d1 > d2;
 }
+
 export function addDaysToCurrentDate(numberOfDays: number): Date {
   //source:https://stackoverflow.com/a/3818198/16642138
   var someDate = new Date();
   var numberOfDaysToAdd = numberOfDays;
   var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
   return new Date(result);
+}
+
+export function addHoursToDate(date: Date, numberOfHours: number): Date {
+  return new Date(date.getTime() + numberOfHours * 3600 * 1000);
 }
 
 export function addHoursToCurrentDate(numberOfHours: number): Date {
