@@ -19,7 +19,7 @@ const initialState: TimezoneState = {
   timezone: Cookies.get('timezone')
     ? JSON.parse(Cookies.get('timezone'))
     : {
-        timezone: null,
+        timezone: '',
         currentOffset: realOffset,
         realOffset,
       },
