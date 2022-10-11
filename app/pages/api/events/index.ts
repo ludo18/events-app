@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
+import apiMessages from '@/lib/api/api-messages.json';
 import { createHandler } from '@/lib/api/handler';
 import { addEvent, getEvents } from '@/lib/features/events/queries';
+import { isOlderThan } from '@/lib/utils/functions';
 
 const handler = createHandler();
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
@@ -10,32 +11,42 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
 });
 
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
-  // an endpoint to demonstrate on-demand ISR revalidation
-  //   https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#using-on-demand-revalidation
-  // in an actual app, this would have a UI, and it would need authorization
-  //   to check the user is authorized to make changes to events
-  // in this app, this endpoint will be hit by testing directly to test on-demand ISR revalidation
-
-  // Check for secret to confirm this is a valid request
-  // TODO: uncomment only if i have time to implement authentication
-  // if (req.query.secret !== process.env.REVALIDATION_SECRET) {
-  //   return res.status(401).json({ message: 'Invalid revalidation token' });
-  // }
-
-  // add event (here is where authorization would be validated)
   const { newEvent } = req.body;
+  //#region validation
   if (!newEvent) {
-    return res.status(400).json({ message: 'Invalid event' });
+    return res.status(400).json({ message: apiMessages.events.Invalid_event });
   }
+  if (
+    !newEvent.name ||
+    !newEvent.description ||
+    !newEvent.startAt ||
+    !newEvent.endAt
+  ) {
+    return res.status(400).json({ message: apiMessages.events.Invalid_event });
+  }
+  if (newEvent.name.length > 32) {
+    return res
+      .status(400)
+      .json({ message: apiMessages.events.Event_name_too_long });
+  }
+  if (
+    isNaN(Date.parse(newEvent.startAt)) ||
+    isNaN(Date.parse(newEvent.endAt))
+  ) {
+    return res
+      .status(400)
+      .json({ message: apiMessages.events.Event_date_format_invalid });
+  }
+  if (!isOlderThan(newEvent.endAt, newEvent.startAt)) {
+    return res
+      .status(400)
+      .json({ message: apiMessages.events.Event_date_values_invalid });
+  }
+  //#endregion
 
-  //console.log('adding new event', newEvent);
   const addedEvent = await addEvent(newEvent);
   console.log(addedEvent);
-  // revalidate events page for ISR
-  // note: this will change to `res.revalidate` when
-  // this feature is out of beta
-  await res.revalidate('/events');
-  return res.json({ event: addedEvent, revalidated: true });
+  return res.json({ event: addedEvent });
 });
 
 export default handler;

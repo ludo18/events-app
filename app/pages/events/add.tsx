@@ -166,7 +166,6 @@ function EventAddScreen() {
                 id="image"
                 autoFocus
                 {...register('image', {
-                  required: t('events.form.Please_enter_image'),
                   maxLength: {
                     value: 1000,
                     message: t('events.form.1000_characters_max'),

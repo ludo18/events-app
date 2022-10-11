@@ -15,7 +15,8 @@ const customJestConfig = {
     // Handle module aliases (this will be automatically configured for you soon)
     '^@/(.*)$': '<rootDir>/$1',
   },
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'node',
+  //testEnvironment: 'jest-environment-jsdom',
   //dont let jest reexecute tests if json data folder was modified (or infinite loop is created)
   watchPathIgnorePatterns: ['<rootDir>/__tests__/__mocks__/db/.*\\.json'],
 };

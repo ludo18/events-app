@@ -1,0 +1,12 @@
+{
+  "Invalid_request": "Invalid request",
+  "Method_not_allowed": "Method not allowed",
+  "Signin_required": "signin required",
+  "events": {
+    "Not_found": "Not found",
+    "Invalid_event": "Invalid event",
+    "Event_name_too_long": "Event name is too long",
+    "Event_date_format_invalid": "Event date format is invalid",
+    "Event_date_values_invalid": "Event date values are invalid"
+  }
+}
