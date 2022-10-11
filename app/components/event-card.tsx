@@ -30,7 +30,11 @@ export const EventCard: FunctionComponent<CustomEvent> = ({
         <Image
           className="rounded-2xl shadow-xl"
           src={
-            image ? `/images/events/${image}` : '/images/default/default.jpg'
+            image
+              ? image.startsWith('http')
+                ? image
+                : `/images/events/${image}`
+              : '/images/default/default.jpg'
           }
           alt={name}
           width={size}

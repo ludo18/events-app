@@ -20,9 +20,12 @@
       "Please_enter_startAt": "Please enter start date & time.",
       "endAt": "End date & time",
       "Please_enter_endAt": "Please enter end date & time.",
-      "image": "Image",
+      "image": "Image Url",
       "Please_enter_image": "Please enter image.",
-      "End_date_should_be_older_than_start_date": "End date should be older than start date"
+      "End_date_should_be_older_than_start_date": "End date should be older than start date",
+      "1000_characters_max": "1000 characters max",
+      "32_characters_max": "32 characters max",
+      "imageSourceWarning": "Only image urls from unsplash.com will be accepted. Visit: "
     }
   },
   "help": {
