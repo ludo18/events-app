@@ -13,7 +13,7 @@ export default function EventScreen({ event }) {
       showHeader={true}
       showFooter={true}
     >
-      <h1>{event.name}</h1>
+      <h1 className="break-words">{event.name}</h1>
       <EventCard
         key={event.id}
         id={event.id}

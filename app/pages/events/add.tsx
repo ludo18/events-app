@@ -99,8 +99,7 @@ function EventAddScreen() {
       if (data?.event?.id) {
         dispatch({ type: 'CREATE_SUCCESS' });
         toast.success(t('events.Event_created_successfully'));
-        //TODO reactivate
-        //router.push(`/events/${data.event.id}`);
+        router.push(`/events/${data.event.id}`);
       } else {
         dispatch({ type: 'CREATE_FAIL' });
         toast.error(getError(data?.message || t('UNEXPECTED_ERROR'))); //TODO: REWRITE
