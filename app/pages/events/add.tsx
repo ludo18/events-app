@@ -151,6 +151,34 @@ function EventAddScreen() {
               )}
             </div>
 
+            {/*image url*/}
+            <div className="sm:col-span-3 mb-4 w-full">
+              <label htmlFor="name">{t('events.form.image')}</label>
+              <div className="italic text-orange-300">
+                {t('events.form.imageSourceWarning')}
+                <Link href="https://www.unsplash.com">
+                  <a target="_blank">unsplash.com</a>
+                </Link>
+              </div>
+              <input
+                type="text"
+                maxLength={1000}
+                className="w-full"
+                id="image"
+                autoFocus
+                {...register('image', {
+                  required: t('events.form.Please_enter_image'),
+                  maxLength: {
+                    value: 1000,
+                    message: t('events.form.1000_characters_max'),
+                  },
+                })}
+              ></input>
+              {errors.image && (
+                <div className="text-red-500">{errors.image.message}</div>
+              )}
+            </div>
+
             {/*description*/}
             <div className="sm:col-span-2 row-span-2 mb-4 w-full">
               <label htmlFor="description">
