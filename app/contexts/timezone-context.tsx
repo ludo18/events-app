@@ -32,7 +32,7 @@ function reducer(state, action) {
     case 'TIMEZONE_UPDATE': {
       const { timezone } = action.payload;
       const offset = timezones[timezone]?.offset ?? state.timezone?.realOffset;
-      const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
+      //const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
       Cookies.set(
         'timezone',
         JSON.stringify({
@@ -40,7 +40,7 @@ function reducer(state, action) {
           timezone,
           currentOffset: offset,
         }),
-        { expires: inFifteenMinutes }
+        { expires: 7 }
       );
       const newState: TimezoneState = {
         ...state,
