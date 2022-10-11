@@ -117,126 +117,118 @@ function EventAddScreen() {
       showFooter={true}
       showHeader={true}
     >
-      <div className="md:col-span-3">
-        {loading ? (
-          <Loading />
-        ) : error ? (
-          <div className="alert-error">{error}</div>
-        ) : (
-          <form
-            className="mx-auto max-w-screen-md sm:m-1"
-            onSubmit={handleSubmit(submitHandler)}
-          >
-            <h1>{t('events.Create_Event')}</h1>
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        <div className="alert-error">{error}</div>
+      ) : (
+        <form
+          className="mx-auto max-w-screen-md "
+          onSubmit={handleSubmit(submitHandler)}
+        >
+          <h1>{t('events.Create_Event')}</h1>
 
-            <div className="flex flex-row flex-wrap justify-start items-center gap-2"></div>
-
-            <div className="grid sm:grid-cols-3 sm:gap-2 md:gap-5 items-center">
-              {/*name*/}
-              <div className="sm:col-span-3 mb-4 w-full">
-                <label htmlFor="name">{t('events.form.Name')}</label>
-                <input
-                  type="text"
-                  maxLength={32}
-                  className="w-full"
-                  id="name"
-                  autoFocus
-                  {...register('name', {
-                    required: t('events.form.Please_enter_name'),
-                    maxLength: {
-                      value: 32,
-                      message: t('events.form.32_characters_max'),
-                    },
-                  })}
-                ></input>
-                {errors.name && (
-                  <div className="text-red-500">{errors.name.message}</div>
-                )}
-              </div>
-
-              {/*description*/}
-              <div className="sm:col-span-2 row-span-2 mb-4 w-full">
-                <label htmlFor="description">
-                  {t('events.form.Description')}
-                </label>
-                <textarea
-                  maxLength={2000}
-                  rows={5}
-                  className="w-full"
-                  id="description"
-                  {...register('description', {
-                    required: t('events.form.Please_enter_description'),
-                    maxLength: {
-                      value: 2000,
-                      message: t('events.form.2000_characters_max'),
-                    },
-                  })}
-                />
-                {errors.description && (
-                  <div className="text-red-500">
-                    {errors.description.message}
-                  </div>
-                )}
-              </div>
-
-              {/*startAt*/}
-              <div className="mb-4 w-full">
-                <label htmlFor="startAt">{t('events.form.startAt')}</label>
-                <input
-                  type="datetime-local"
-                  className="w-full"
-                  min={new Date().toDateString()}
-                  max={addDaysToCurrentDate(731).toDateString()}
-                  id="startAt"
-                  {...register('startAt', {
-                    required: t('events.form.Please_enter_startAt'),
-                    valueAsDate: true,
-                  })}
-                />
-                {errors.startAt && (
-                  <div className="text-red-500">{errors.startAt.message}</div>
-                )}
-              </div>
-
-              {/*endAt*/}
-              <div className="mb-4 w-full">
-                <label htmlFor="endAt">{t('events.form.endAt')}</label>
-                <input
-                  type="datetime-local"
-                  className="w-full"
-                  min={new Date().toDateString()}
-                  max={addDaysToCurrentDate(731).toDateString()}
-                  id="endAt"
-                  {...register('endAt', {
-                    required: t('events.form.Please_enter_endAt'),
-                    valueAsDate: true,
-                    validate: {
-                      olderThanStartDate: (v) =>
-                        isOlderThan(v, getValues('startAt')) === true ||
-                        t(
-                          'events.form.End_date_should_be_older_than_start_date'
-                        ),
-                    },
-                  })}
-                />
-                {errors.endAt && (
-                  <div className="text-red-500">{errors.endAt.message}</div>
-                )}
-              </div>
+          <div className="grid sm:grid-cols-3 sm:gap-2 md:gap-5 items-center">
+            {/*name*/}
+            <div className="sm:col-span-3 mb-4 w-full">
+              <label htmlFor="name">{t('events.form.Name')}</label>
+              <input
+                type="text"
+                maxLength={32}
+                className="w-full"
+                id="name"
+                autoFocus
+                {...register('name', {
+                  required: t('events.form.Please_enter_name'),
+                  maxLength: {
+                    value: 32,
+                    message: t('events.form.32_characters_max'),
+                  },
+                })}
+              ></input>
+              {errors.name && (
+                <div className="text-red-500">{errors.name.message}</div>
+              )}
             </div>
 
-            <div className="mb-4">
-              <button disabled={loadingCreate} className="primary-button">
-                {loadingCreate ? t('loading') : t('Create')}
-              </button>
+            {/*description*/}
+            <div className="sm:col-span-2 row-span-2 mb-4 w-full">
+              <label htmlFor="description">
+                {t('events.form.Description')}
+              </label>
+              <textarea
+                maxLength={2000}
+                rows={5}
+                className="w-full"
+                id="description"
+                {...register('description', {
+                  required: t('events.form.Please_enter_description'),
+                  maxLength: {
+                    value: 2000,
+                    message: t('events.form.2000_characters_max'),
+                  },
+                })}
+              />
+              {errors.description && (
+                <div className="text-red-500">{errors.description.message}</div>
+              )}
             </div>
 
-            <div className="mb-4">
-              <Link href="/events">{t('Back')}</Link>
+            {/*startAt*/}
+            <div className="mb-4 w-full">
+              <label htmlFor="startAt">{t('events.form.startAt')}</label>
+              <input
+                type="datetime-local"
+                className="w-full"
+                min={new Date().toDateString()}
+                max={addDaysToCurrentDate(731).toDateString()}
+                id="startAt"
+                {...register('startAt', {
+                  required: t('events.form.Please_enter_startAt'),
+                  valueAsDate: true,
+                })}
+              />
+              {errors.startAt && (
+                <div className="text-red-500">{errors.startAt.message}</div>
+              )}
             </div>
-          </form>
-        )}
-      </div>
+
+            {/*endAt*/}
+            <div className="mb-4 w-full">
+              <label htmlFor="endAt">{t('events.form.endAt')}</label>
+              <input
+                type="datetime-local"
+                className="w-full"
+                min={new Date().toDateString()}
+                max={addDaysToCurrentDate(731).toDateString()}
+                id="endAt"
+                {...register('endAt', {
+                  required: t('events.form.Please_enter_endAt'),
+                  valueAsDate: true,
+                  validate: {
+                    olderThanStartDate: (v) =>
+                      isOlderThan(v, getValues('startAt')) === true ||
+                      t('events.form.End_date_should_be_older_than_start_date'),
+                  },
+                })}
+              />
+              {errors.endAt && (
+                <div className="text-red-500">{errors.endAt.message}</div>
+              )}
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <button disabled={loadingCreate} className="primary-button">
+              {loadingCreate ? t('loading') : t('Create')}
+            </button>
+          </div>
+
+          <div className="mb-4">
+            <Link href="/events">{t('Back')}</Link>
+          </div>
+        </form>
+      )}
     </Layout>
   );
 }
