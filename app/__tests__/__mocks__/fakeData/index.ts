@@ -1,7 +1,7 @@
 import path from 'path';
 
 import { filenames, getJSONfromFile } from '@/lib/db/db-utils';
-import type { Event } from '@/lib/features/events/types';
+import type { CustomEvent } from '@/lib/features/events/types';
 import type { AuthUser } from '@/lib/features/users/types';
 
 // store fake data in JSON files for easier command-line db reset
@@ -14,7 +14,7 @@ export const readFakeData = async () => {
   ]);
 
   return {
-    fakeEvents: fakeEvents as Array<Event>,
+    fakeEvents: fakeEvents as Array<CustomEvent>,
     fakeUsers: fakeUsers as Array<AuthUser>,
   };
 };

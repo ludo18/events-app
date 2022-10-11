@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Event } from '@/lib/features/events/types';
+import { CustomEvent } from '@/lib/features/events/types';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import TimezoneDatetime from './timezone-datetime';
 
-export const EventCard: FunctionComponent<Event> = ({
+export const EventCard: FunctionComponent<CustomEvent> = ({
   id,
   name,
   description,

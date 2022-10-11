@@ -2,12 +2,12 @@ import jsonPatch, { Operation } from 'fast-json-patch';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import type { Event } from '@/lib/features/events/types';
+import type { CustomEvent } from '@/lib/features/events/types';
 import type { AuthUser } from '@/lib/features/users/types';
 
 import { getDbPath } from './constants';
 
-type JsonDataType = AuthUser | Event;
+type JsonDataType = AuthUser | CustomEvent;
 
 export enum filenames {
   users = 'users.json',

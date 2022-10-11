@@ -1,6 +1,6 @@
-import { Event } from '../features/events/types';
+import { CustomEvent } from '../features/events/types';
 
-export function sortDescEvents(a: Event, b: Event): number {
+export function sortDescEvents(a: CustomEvent, b: CustomEvent): number {
   return a.startAt > b.startAt ? -1 : b.startAt > a.startAt ? 1 : 0;
 }
 

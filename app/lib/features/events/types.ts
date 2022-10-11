@@ -1,4 +1,4 @@
-export interface Event {
+export interface CustomEvent {
   id: number;
   name: string;
   description: string;

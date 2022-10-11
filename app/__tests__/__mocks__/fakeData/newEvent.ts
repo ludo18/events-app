@@ -1,6 +1,6 @@
-import { Event } from '@/lib/features/events/types';
+import { CustomEvent } from '@/lib/features/events/types';
 
-export const generateNewEvent = (eventId: number): Event => ({
+export const generateNewEvent = (eventId: number): CustomEvent => ({
   id: eventId,
   startAt: '2023-06-28T22:00:00.000Z',
   endAt: '2023-06-29T02:00:00.000Z',

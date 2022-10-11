@@ -5,21 +5,23 @@ import {
   writeJSONToFile,
 } from '@/lib/db/db-utils';
 
-import type { Event } from './types';
+import type { CustomEvent } from './types';
 
-export async function writeEvents(newEventsArray: Event[]): Promise<void> {
+export async function writeEvents(
+  newEventsArray: CustomEvent[]
+): Promise<void> {
   await writeJSONToFile(filenames.events, newEventsArray);
 }
 
-export async function getEvents(): Promise<Event[]> {
-  return getJSONfromFile<Event>(filenames.events);
+export async function getEvents(): Promise<CustomEvent[]> {
+  return getJSONfromFile<CustomEvent>(filenames.events);
 }
 
-export async function getEventById(eventId: number): Promise<Event> {
-  return getItemById<Event>(eventId, filenames.events, 'event');
+export async function getEventById(eventId: number): Promise<CustomEvent> {
+  return getItemById<CustomEvent>(eventId, filenames.events, 'event');
 }
 
-export async function addEvent(newEvent: Event): Promise<Event> {
+export async function addEvent(newEvent: CustomEvent): Promise<CustomEvent> {
   const events = await getEvents();
 
   // get the max id from the existing ids
