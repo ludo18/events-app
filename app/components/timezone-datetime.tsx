@@ -2,7 +2,7 @@ import { TimezoneContext } from '@/contexts/timezone-context';
 import { addHoursToDate } from '@/lib/utils/functions';
 import React, { useContext } from 'react';
 
-export default function TimezoneDatetime<Date>({ datetime }) {
+export default function TimezoneDatetime({ datetime }) {
   const { state, dispatch } = useContext(TimezoneContext);
 
   const adjustedDatetime = addHoursToDate(

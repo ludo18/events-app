@@ -11,7 +11,7 @@ export const EventCard: FunctionComponent<CustomEvent> = ({
   image,
   startAt,
   endAt,
-}) => {
+}: CustomEvent) => {
   const { t } = useTranslation('common');
   const [ratio, setRatio] = useState(16 / 9);
   const size = 600;

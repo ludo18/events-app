@@ -36,8 +36,9 @@ function reducer(state, action) {
       Cookies.set(
         'timezone',
         JSON.stringify({
-          ...state,
-          timezone: { ...state.timezone, timezone, currentOffset: offset },
+          ...state.timezone,
+          timezone,
+          currentOffset: offset,
         }),
         { expires: inFifteenMinutes }
       );
