@@ -24,10 +24,6 @@ describe("On a page hosting an event card, user changes the timezone, and the ev
       '26/09/2022 18:0026/09/2022 21:00'
     );
   });
-
-  // it('checks that a cookie "timezone" has been created', () => {
-  //   cy.getCookie('timezone').should('exist');
-  // });
 });
 
 // Prevent TypeScript from reading file as legacy script

@@ -124,14 +124,6 @@ export default function Header() {
           <Link href="/about">
             <a className="whitespace-nowrap">{t('About')}</a>
           </Link>
-          {/* 
-          <Link href="/login" className="p-2">
-            <a>{t('Login')}</a>
-          </Link>
-          <Link href="/help" className="p-2">
-            <a>{t('Help')}</a>
-          </Link>
-          */}
         </div>
       </nav>
     </header>

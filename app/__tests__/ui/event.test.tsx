@@ -1,5 +1,11 @@
 import { readFakeData } from '@/__tests__/__mocks__/fakeData/index';
-import { getByTestId, render, screen } from '@testing-library/react';
+import {
+  getByTestId,
+  findByTestId,
+  getByRole,
+  render,
+  screen,
+} from '@testing-library/react';
 import EventScreen from '@/pages/events/[eventId]';
 import { TimezoneContextProvider } from '@/contexts/timezone-context';
 
@@ -17,9 +23,8 @@ describe('Event details page', () => {
         <EventScreen event={event} />
       </TimezoneContextProvider>
     );
-    expect(
-      getByTestId(document.documentElement, 'h1-event-name')
-    ).toBeInTheDocument();
+    const name = await screen.findByTestId('h1-event-name');
+    expect(name).toBeInTheDocument();
 
     const desc = await screen.findByText(event.description);
     expect(desc).toBeInTheDocument();

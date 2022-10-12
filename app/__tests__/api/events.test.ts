@@ -108,22 +108,6 @@ describe('/api/events', () => {
     });
   });
 
-  // it('should return 404 if no event is associated with the given id', async () => {
-  //   const eventId = 9999;
-  //   await testApiHandler({
-  //     handler: eventIdHandler,
-  //     paramsPatcher: (params) => (params.eventId = eventId),
-  //     test: async ({ fetch }) => {
-  //       const res = await fetch({ method: 'GET' });
-  //       expect(res.status).toBe(404);
-  //       const json = await res.json();
-
-  //       expect(json).toHaveProperty('message');
-  //       expect(json.message).toEqual(apiMessages.events.Not_found);
-  //     },
-  //   });
-  // });
-
   it('should create a new event', async () => {
     await testApiHandler({
       handler: eventsHandler,
