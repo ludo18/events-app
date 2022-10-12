@@ -6,6 +6,9 @@ Timezone can be changed, and events datetimes will reflect the timezone selected
 
 No authentication implemented.
 
+**Note**: i give the user the possibility to add image url for an event. The only accepted domain is https://images.unsplash.com.
+So, choose a picture from https://www.unsplash.com, copy the picture link, and use it in field **image** when creating an event.
+
 ## Warnings
 
 package.json contains scripts adapted for windows.
