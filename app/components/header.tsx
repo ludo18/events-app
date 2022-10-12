@@ -30,10 +30,7 @@ export default function Header() {
       `${t('timezone.Simulated_local_time_is_now')}:\n${addHoursToCurrentDate(
         parseInt(state.timezone.currentOffset, 10) -
           parseInt(state.timezone.realOffset, 10)
-      ).toLocaleString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-      })}`,
+      ).toLocaleString()}`,
       {
         toastId: 'success',
       }

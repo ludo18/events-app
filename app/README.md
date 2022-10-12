@@ -6,6 +6,12 @@ Timezone can be changed, and events datetimes will reflect the timezone selected
 
 No authentication implemented.
 
+## Warnings
+
+package.json contains scripts adapted for windows.
+
+Example: "start" script contains 'set'.
+
 ## Rules & Assertions
 
 - event properties:
@@ -66,6 +72,8 @@ Screenshots in: `./cypress/e2e/screenshots`.
 ```bash
 npm run cypress:build
 ```
+
+This will start Cypress app,
 
 ## Techs & Structure
 
