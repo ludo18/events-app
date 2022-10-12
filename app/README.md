@@ -13,6 +13,8 @@ So, choose a picture from https://www.unsplash.com, copy the picture link, and u
 
 The app is currently deployed at: https://events-app-blue-seven.vercel.app/
 
+Sadly, Vercel file system [is not writable](https://www.github.com/orgs/vercel/discussions/239). That's why on this deployment, you'll get an error trying to create an event. up to the moment I will set an external database to store events.
+
 ## Warnings
 
 package.json contains scripts adapted for windows.
