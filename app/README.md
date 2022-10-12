@@ -1,20 +1,77 @@
 # Events App
 
-This application displays events, and let authenticated users add events.
+This application displays events, and anyone can add events.
 
-## Rules
+Timezone can be changed, and events datetimes will reflect the timezone selected.
+
+No authentication implemented.
+
+## Rules & Assertions
 
 - event properties:
   - name (32char.max)
   - description
   - startAt: ISO datetime string
   - endAt: ISO datetime string
-
-## Assertions
-
 - Events are considered virtual, that's why I don't care with the geolocation.
 
-## Structure
+## Install & setup
+
+### Environment
+
+The db paths must be set in .env file:
+
+- .env.development: `DB_PATH="./db"`
+- .env.test: `DB_PATH="./\_\_tests\_\_/\_\_mocks\_\_/db"`
+
+### Scripts
+
+```bash
+cd ./app/
+npm install
+npm run dev
+```
+
+The app will start on port 3000.
+
+## Tests
+
+The db paths must be set in .env.test file:
+`DB_PATH="./\_\_tests\_\_/\_\_mocks\_\_/db"`
+
+Here is how to run tests suites with Jest (unit & integration tests) & Cypress (e2e).
+
+### Jest
+
+```bash
+npm run test
+```
+
+### Cypress
+
+**Headless**
+
+To run Cypress tests headless
+
+```bash
+npm run cypress:run
+```
+
+Videos will be recorded in: `./cypress/e2e/videos`
+
+Screenshots in: `./cypress/e2e/screenshots`.
+
+**With Cypress application**
+
+```bash
+npm run cypress:build
+```
+
+## Techs & Structure
+
+### Techs
+
+Next.js (front & back)
 
 ### Database
 
@@ -28,5 +85,5 @@ I didn't implement the json db implementation: I used and adapted the one that c
 
 The db paths must be set in .env files:
 
-- .env: DB_PATH="./db"
-- .env.test: DB_PATH="./\_\_tests\_\_/\_\_mocks\_\_/db"
+- .env: `DB_PATH="./db"`
+- .env.test: `DB_PATH="./\_\_tests\_\_/\_\_mocks\_\_/db"`
