@@ -1,4 +1,4 @@
-describe('user select a timezone & creates an event & is directed to this event details page', () => {
+describe('user selects a timezone & creates an event & is directed to this event details page', () => {
   it('visits the home page [en]', () => {
     cy.visit('/en/events/add');
   });
@@ -45,7 +45,7 @@ describe('user select a timezone & creates an event & is directed to this event 
     cy.get('[id=btn-add-event]').click();
   });
 
-  it('navigates to a the new event details page', () => {
+  it('navigates to the new event details page', () => {
     console.log(cy.url());
     cy.url().should('include', '/events/');
     cy.get('h1').should('contain', 'Cypress event');
