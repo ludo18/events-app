@@ -23,6 +23,12 @@ describe('user select a timezone & creates an event & is directed to this event 
       .should('have.value', 'Cypress description of the event');
   });
 
+  it('types a image url for the event', () => {
+    cy.get('[id=image]')
+      .type('eventD.webp')
+      .should('have.value', 'eventD.webp');
+  });
+
   it('selects a start date', () => {
     cy.get('[id=startAt]')
       .type('2023-01-01T10:00')
