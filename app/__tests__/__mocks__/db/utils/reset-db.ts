@@ -11,11 +11,8 @@ export const resetDB = async () => {
     return;
   }
 
-  const { fakeEvents, fakeUsers } = await readFakeData();
+  const { fakeEvents } = await readFakeData();
 
   //overwrite data in files
-  await Promise.all([
-    writeJSONToFile(filenames.events, fakeEvents),
-    writeJSONToFile(filenames.users, fakeUsers),
-  ]);
+  await Promise.all([writeJSONToFile(filenames.events, fakeEvents)]);
 };

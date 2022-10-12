@@ -9,7 +9,6 @@ import { getDbPath } from './constants';
 type JsonDataType = CustomEvent;
 
 export enum filenames {
-  users = 'users.json',
   events = 'events.json',
 }
 
