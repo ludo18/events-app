@@ -4,8 +4,9 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getEventById } from '@/lib/features/events/queries';
 import { EventCard } from '@/components/event-card';
+import dynamic from 'next/dynamic';
 
-export default function EventScreen({ event }) {
+function EventScreen({ event }) {
   const { t } = useTranslation('common');
   return (
     <Layout
@@ -38,3 +39,5 @@ export async function getServerSideProps(context) {
     props: { event, ...(await serverSideTranslations(locale, ['common'])) },
   };
 }
+
+export default dynamic(() => Promise.resolve(EventScreen), { ssr: false });

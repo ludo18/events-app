@@ -7,8 +7,9 @@ import { EventCard } from '@/components/event-card';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import { sortDescEvents } from '@/lib/utils/functions';
+import dynamic from 'next/dynamic';
 
-export default function Events({ events }) {
+function Events({ events }) {
   const { t } = useTranslation('common');
   return (
     <Layout title={t('events.Events')} showHeader={true} showFooter={true}>
@@ -47,3 +48,5 @@ export async function getStaticProps({ locale }) {
     props: { events, ...(await serverSideTranslations(locale, ['common'])) },
   };
 }
+
+export default dynamic(() => Promise.resolve(Events), { ssr: false });
