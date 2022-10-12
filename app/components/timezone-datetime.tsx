@@ -11,7 +11,7 @@ export default function TimezoneDatetime({ datetime }) {
       parseInt(state.timezone.realOffset, 10)
   );
   return (
-    <div className="whitespace-nowrap">
+    <div className="whitespace-nowrap" data-cy="datelabel">
       {adjustedDatetime.toLocaleDateString() +
         ' ' +
         adjustedDatetime.toLocaleTimeString([], {

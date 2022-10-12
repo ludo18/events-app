@@ -43,6 +43,12 @@ describe('user select a timezone & creates an event & is directed to this event 
     console.log(cy.url());
     cy.url().should('include', '/events/');
     cy.get('h1').should('contain', 'Cypress event');
+
+    const dateLabelSelector = '[data-cy=datelabel]';
+    cy.get(dateLabelSelector).should(
+      'have.text',
+      '01/01/2023 10:0001/01/2023 16:00'
+    );
   });
 });
 
