@@ -3,11 +3,10 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 import type { CustomEvent } from '@/lib/features/events/types';
-import type { AuthUser } from '@/lib/features/users/types';
 
 import { getDbPath } from './constants';
 
-type JsonDataType = AuthUser | CustomEvent;
+type JsonDataType = CustomEvent;
 
 export enum filenames {
   users = 'users.json',
