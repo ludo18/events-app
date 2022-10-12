@@ -13,7 +13,9 @@ export default function EventScreen({ event }) {
       showHeader={true}
       showFooter={true}
     >
-      <h1 className="break-words">{event.name}</h1>
+      <h1 className="break-words" data-testid="h1-event-name">
+        {event.name}
+      </h1>
       <EventCard
         key={event.id}
         id={event.id}
@@ -22,7 +24,7 @@ export default function EventScreen({ event }) {
         startAt={event.startAt}
         endAt={event.endAt}
         image={event.image}
-      ></EventCard>
+      />
     </Layout>
   );
 }

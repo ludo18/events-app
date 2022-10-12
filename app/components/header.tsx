@@ -68,6 +68,7 @@ export default function Header() {
         <div className="flex flex-row flex-nowrap items-center justify-center gap-1">
           <div>{t('timezone.Timezone')}</div>
           <select
+            id="timezone-selector"
             className="w-full lg:w-2/3"
             value={state.timezone?.timezone}
             onChange={timezoneHandler}

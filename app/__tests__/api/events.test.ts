@@ -4,8 +4,6 @@ import eventIdHandler from '@/pages/api/events/[eventId]';
 import eventsHandler from '@/pages/api/events/index';
 import { readFakeData } from '@/__tests__/__mocks__/fakeData';
 import apiMessages from '@/lib/api/api-messages.json';
-import { generateNewEvent } from '../__mocks__/fakeData/newEvent';
-import type { CustomEvent } from '@/lib/features/events/types';
 
 describe('/api/events/[eventId]', () => {
   describe('methods', () => {

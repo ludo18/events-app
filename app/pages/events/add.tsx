@@ -16,6 +16,14 @@ import {
 } from '@/lib/utils/functions';
 import { TimezoneContext } from '@/contexts/timezone-context';
 
+type FormValues = {
+  name: string;
+  description: string;
+  image: string;
+  startAt: string;
+  endAt: string;
+};
+
 function reducer(state, action) {
   switch (action.type) {
     case 'CREATE_REQUEST':
@@ -45,7 +53,7 @@ function EventAddScreen() {
     register,
     formState: { errors },
     getValues,
-  } = useForm();
+  } = useForm<FormValues>();
 
   function adjustDatetimesToSimulatedTimezone({
     startAt,
@@ -245,7 +253,11 @@ function EventAddScreen() {
           </div>
 
           <div className="mb-4">
-            <button disabled={loadingCreate} className="primary-button">
+            <button
+              id="btn-add-event"
+              disabled={loadingCreate}
+              className="primary-button"
+            >
               {loadingCreate ? t('loading') : t('Create')}
             </button>
           </div>
