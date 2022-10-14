@@ -48,7 +48,7 @@ export default function About({ posts }): React.ReactElement {
         <h2>Credits</h2>
         <p>
           <Link href="https://www.vecteezy.com/free-vector/event-icon">
-            Event Icon (favicon) Vectors by Vecteezy
+            <a>Event Icon (favicon) Vectors by Vecteezy</a>
           </Link>
         </p>
         <p>
