@@ -29,21 +29,25 @@ export default function About({ posts }): React.ReactElement {
         </div>
         <h2>Documentation</h2>
         <div className="flex flex-row items-center justify-center gap-4 ">
-          {posts.map(({ slug, frontmatter }) => (
-            <div key={slug} className="overflow-hidden flex flex-col p-1">
-              <Link href={`/post/${slug}`}>
-                <a>
-                  <Image
-                    width={100}
-                    height={130}
-                    alt={frontmatter.title}
-                    src={`/${frontmatter.image}`}
-                  />
-                  <div>{frontmatter.title}</div>
-                </a>
-              </Link>
-            </div>
-          ))}
+          {posts.map(
+            ({ slug, frontmatter }) =>
+              slug &&
+              frontmatter && (
+                <div key={slug} className="overflow-hidden flex flex-col p-1">
+                  <Link href={`/post/${slug}`}>
+                    <a>
+                      <Image
+                        width={100}
+                        height={130}
+                        alt={frontmatter.title}
+                        src={`/${frontmatter.image}`}
+                      />
+                      <div>{frontmatter.title}</div>
+                    </a>
+                  </Link>
+                </div>
+              )
+          )}
         </div>
         <h2>Credits</h2>
         <p>
