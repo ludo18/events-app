@@ -161,7 +161,7 @@ function EventAddScreen() {
             {/*image url*/}
             <div className="sm:col-span-3 mb-4 w-full">
               <label htmlFor="name">{t('events.form.image')}</label>
-              <div className="italic text-orange-300">
+              <div className="italic text-orange-600 dark:text-orange-300">
                 {t('events.form.imageSourceWarning')}
                 <Link href="https://www.unsplash.com">
                   <a target="_blank">unsplash.com</a>

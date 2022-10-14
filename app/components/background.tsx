@@ -5,9 +5,7 @@ export default function Background({ children }) {
   return (
     <div>
       {/** main container */}
-      <div className="bg-slate-900 h-full w-full text-slate-400">
-        {children}
-      </div>
+      <div className="h-full w-full">{children}</div>
 
       <div className="bgWrap">
         {/** other fixed elements (menus, strips, banners) */}
