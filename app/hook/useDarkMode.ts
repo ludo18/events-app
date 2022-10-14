@@ -6,7 +6,7 @@ export default function useDarkMode() {
   if (typeof window !== 'undefined') {
     myTheme = localStorage.theme;
   }
-  const [theme, setTheme] = useState(myTheme ?? 'dark');
+  const [theme, setTheme] = useState<string | null>(myTheme ?? 'dark');
   const colorTheme = theme === 'dark' ? 'light' : 'dark';
 
   useEffect(() => {
@@ -19,5 +19,5 @@ export default function useDarkMode() {
     }
   }, [theme, colorTheme]);
 
-  return [colorTheme, setTheme];
+  return [colorTheme, setTheme] as const;
 }
