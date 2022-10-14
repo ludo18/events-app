@@ -25,7 +25,9 @@
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "fast-json-patch": "^3.1.1",
+    "gray-matter": "^4.0.3",
     "js-cookie": "^3.0.1",
+    "markdown-it": "^13.0.1",
     "next": "^12.3.1",
     "next-connect": "^0.13.0",
     "next-i18next": "^12.1.0",
@@ -36,6 +38,7 @@
     "react-toastify": "^9.0.8"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.7",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",

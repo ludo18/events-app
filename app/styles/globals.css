@@ -46,7 +46,7 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl sm:text-3xl;
+  @apply text-2xl sm:text-3xl mb-2 mt-4;
 }
 
 input,
