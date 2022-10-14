@@ -16,9 +16,9 @@ export default function Layout({ title, children, showFooter, showHeader }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Background>
-        <div className="flex min-h-screen flex-col justify-between ml-1 mr-5 gap-1 sm:gap-10">
+        <div className="flex min-h-screen flex-col justify-between ml-1 mr-5 gap-3 sm:gap-10 transition duration-500">
           {showHeader !== false && <Header />}
-          <main className="container m-auto text-center">{children}</main>
+          <main className="container m-auto text-center ">{children}</main>
           {showFooter !== false && <Footer />}
         </div>
       </Background>
