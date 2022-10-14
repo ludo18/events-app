@@ -31,9 +31,8 @@
 html,
 body {
   overflow-y: overlay; /* this avoids the screen "jumps" due to scrollbar hiding/showing*/
-  padding: 0;
-  margin: 0;
   font-family: 'Brixton-Sans-Rg', 'Roboto_Condensed-Regular', sans-serif;
+  @apply p-0 m-0 bg-slate-300 dark:bg-slate-900  text-slate-700 dark:text-slate-400;
 }
 
 h1,
@@ -52,8 +51,8 @@ h2 {
 input,
 textarea {
   @apply rounded border border-slate-400 
-  bg-slate-600  opacity-80 p-2 outline-none 
-  ring-slate-400 focus:ring;
+  bg-slate-400 dark:bg-slate-600 opacity-80 p-2 outline-none 
+  ring-slate-500 dark:ring-slate-400 focus:ring;
 }
 
 a {
@@ -68,11 +67,11 @@ a {
 select {
   font-family: 'Brixton-Sans-Outline';
   @apply bg-transparent border-b-2
-    border-dotted border-b-slate-300;
+    border-dotted border-b-slate-500 dark:border-b-slate-300;
 }
 
 option {
-  @apply bg-slate-700;
+  @apply bg-slate-400 dark:bg-slate-700;
 }
 
 .bgWrap {
@@ -98,21 +97,24 @@ option {
 
 .primary-button {
   @apply rounded border-2 py-2 px-4 shadow outline-none
-   bg-slate-600 border-slate-400
-   hover:bg-slate-700 hover:border-slate-500
-   active:bg-slate-800 active:border-slate-600;
+   bg-slate-400 border-slate-500
+   hover:bg-slate-500 hover:border-slate-600
+   active:bg-slate-600 active:border-slate-700
+   dark:bg-slate-600 dark:border-slate-400
+   dark:hover:bg-slate-700 dark:hover:border-slate-500
+   dark:active:bg-slate-800 dark:active:border-slate-600;
 }
-.default-button {
-  @apply rounded bg-gray-100 py-2 px-4 
-   shadow outline-none hover:bg-gray-700 active:bg-gray-800;
-}
+
 .minimalistic-button {
-  @apply shadow outline-none   
-   hover:text-slate-500
-  active:text-slate-800;
+  @apply shadow outline-none rounded-full 
+  text-slate-500
+   hover:text-slate-600 active:text-slate-700 
+   dark:text-slate-500
+  dark:hover:text-slate-500   dark:active:text-slate-800;
 }
 
 .toast {
   font-family: 'Roboto_Condensed-Regular', sans-serif;
-  @apply bg-slate-700 text-slate-400;
+  @apply bg-slate-400 text-slate-800 
+  dark:bg-slate-700 dark:text-slate-400;
 }
