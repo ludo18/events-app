@@ -46,6 +46,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
 
   const addedEvent = await addEvent(newEvent);
   console.log(addedEvent);
+  await res.revalidate('/events');
   return res.json({ event: addedEvent });
 });
 
