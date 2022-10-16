@@ -32,7 +32,7 @@ html,
 body {
   overflow-y: overlay; /* this avoids the screen "jumps" due to scrollbar hiding/showing*/
   font-family: 'Brixton-Sans-Rg', 'Roboto_Condensed-Regular', sans-serif;
-  @apply p-0 m-0 bg-slate-300 dark:bg-slate-900  text-slate-700 dark:text-slate-400;
+  @apply p-0 m-0   text-slate-700 dark:text-slate-400;
 }
 
 h1,
