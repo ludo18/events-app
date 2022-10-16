@@ -15,7 +15,12 @@ export default function Layout({ title, children, showFooter, showHeader }) {
         <meta name="description" content="Web application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Background>
+      <Background
+        showEnvironmentStrip={true}
+        imagePath="/images/background-events.webp"
+        darkModeTailwindcolor="slate-900"
+        lightModeTailwindcolor="slate-300"
+      >
         <div className="flex min-h-screen flex-col justify-between ml-1 mr-5 gap-3 sm:gap-10 transition duration-500">
           {showHeader !== false && <Header />}
           <main className="container m-auto text-center ">{children}</main>
